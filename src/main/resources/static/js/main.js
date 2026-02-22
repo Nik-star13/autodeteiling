@@ -52,31 +52,42 @@ document.addEventListener('DOMContentLoaded', function() {
         totalPriceEl.textContent = `${totalPrice} BYN`;
     }
 
-    orderForm.addEventListener('submit', function(e) {
+    orderForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         if (selectedServices.length === 0) {
-            alert('❌ Выберите хотя бы одну услугу');
+            alert('Выберите хотя бы одну услугу');
             return;
         }
 
         const formData = {
-            name: document.getElementById('name').value,
+            customerName: document.getElementById('name').value,
             phone: document.getElementById('phone').value,
-            services: selectedServices.map(s => s.name).join(', ')
+            carBrand: document.getElementById('carBrand').value,
+            services: selectedServices.map(s => s.name)
         };
 
-        alert('✅ Заявка отправлена!\n\n' +
-            `👤 ${formData.name}\n` +
-            `📱 ${formData.phone}\n` +
-            `🛠️ ${formData.services}`);
+        try {
+            const response = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
 
-        this.reset();
-        selectedServices = [];
-        serviceButtons.forEach(btn => {
-            btn.classList.remove('selected');
-            btn.innerHTML = '<i class="fas fa-plus me-2"></i>Выбрать';
-        });
-        updateOrderSummary();
+            if (response.ok) {
+                const order = await response.json();
+                this.reset();
+                selectedServices = [];
+                serviceButtons.forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.innerHTML = '<i class="fas fa-plus me-2"></i>Выбрать';
+                });
+                updateOrderSummary();
+            } else {
+                alert('Ошибка сервера');
+            }
+        } catch (error) {
+            alert('Ошибка сети');
+        }
     });
 
     document.getElementById('phone').addEventListener('input', function(e) {
@@ -96,10 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetId = this.getAttribute('href');
             const target = document.querySelector(targetId);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });

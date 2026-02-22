@@ -1,4 +1,4 @@
 package com.autodet.autodet.repository;
 
-public class CustomerRepository {
+public class CustomerRepository{
 }
