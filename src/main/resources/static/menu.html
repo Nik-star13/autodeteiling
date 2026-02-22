@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoDetailing Minsk | Премиум детейлинг</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/autodetailing.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top premium-nav" id="navbar">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#home">
+            <i class="fas fa-car-side me-2"></i>AutoDetailing
+        </a>
+        <button class="navbar-toggler premium-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link px-3" href="#home">Главная</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#services">Услуги</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#order">Заказать</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="hero-section min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-4 hero-title">
+                    Премиум детейлинг<br>
+                    <span class="premium-gold">Minsk</span>
+                </h1>
+                <p class="lead mb-5 fs-4 text-cream">Итальянское оборудование. Профессиональная химия. 5 лет гарантии качества.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#services" class="btn btn-premium btn-lg px-5 py-3 fw-bold scroll-link">
+                        <i class="fas fa-crown me-2"></i>Посмотреть услуги
+                    </a>
+                    <a href="#order" class="btn btn-outline-gold btn-lg px-5 py-3 fw-bold scroll-link">
+                        <i class="fas fa-file-invoice me-2"></i>Заказать услугу
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-car glass-card">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?fit=crop&w=500&h=350"
+                         alt="Premium Auto" class="img-fluid rounded-3 shadow-lg w-100 h-100 object-fit-cover">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-5 bg-cream-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-4 premium-text">Наши услуги</h2>
+            <p class="lead text-brown mb-0 w-75 mx-auto">Выберите нужные услуги для расчета стоимости</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="wash" data-price="150">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-water fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Комплексная мойка</h4>
+                    <p class="text-brown mb-3 small">Контактная + бесконтактная. Пенный пылесос.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">150 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="interior" data-price="250">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-couch fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Химчистка салона</h4>
+                    <p class="text-brown mb-3 small">Паровая + экстракторная. Антибактериальная.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">250 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="polish" data-price="300">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-magic fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Полировка ЛКП</h4>
+                    <p class="text-brown mb-3 small">Защитная + восстановительная. Глянцевый блеск.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">300 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="ceramic" data-price="1200">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-car-battery fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Нанокерамика</h4>
+                    <p class="text-brown mb-3 small">Защита ЛКП 3 года. Глянцевый эффект.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">1200 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="wheels" data-price="200">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-circle-notch fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Детейлинг дисков</h4>
+                    <p class="text-brown mb-3 small">Глубокая чистка + антикоррозийная защита.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">200 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="protect" data-price="450">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-shield-alt fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Антигравий</h4>
+                    <p class="text-brown mb-3 small">TPH + пленка. Защита от сколов 2 года.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">450 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="wax" data-price="180">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-snowflake fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Жидкий воск</h4>
+                    <p class="text-brown mb-3 small">Нанесение + гидрофобный эффект. 6 месяцев.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">180 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="engine" data-price="120">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-cog fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Чистка мотора</h4>
+                    <p class="text-brown mb-3 small">Пар + химия. Без разборки.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">120 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 service-item" data-service="headlights" data-price="90">
+                <div class="service-card glass-card h-100 text-center p-4 position-relative">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-lightbulb fs-1 service-icon-gold"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 fs-5 text-cream">Реставрация фар</h4>
+                    <p class="text-brown mb-3 small">Полировка + защита. +30% света.</p>
+                    <div class="fw-bold fs-5 premium-gold mb-3">90 BYN</div>
+                    <button class="btn btn-select-service w-100 py-2 fw-bold" type="button">
+                        <i class="fas fa-plus me-2"></i>Выбрать
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="order" class="py-5 bg-cream-gradient">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="glass-card-large p-5 text-center mb-5">
+                    <h2 class="display-6 fw-bold mb-4 premium-text">Заказать услуги</h2>
+                    <p class="lead text-cream mb-5">Заполните форму для записи</p>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="selected-services glass-card-small p-4 mb-4">
+                                <h5 class="fw-bold mb-3 text-cream"><i class="fas fa-list-check me-2"></i>Выбранные услуги</h5>
+                                <div id="servicesList" class="text-cream small"></div>
+                            </div>
+                            <div class="total-price glass-card-small p-4 text-center">
+                                <h4 class="fw-bold mb-1 premium-gold" id="totalPrice">0 BYN</h4>
+                                <small class="text-cream">Итого к оплате</small>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <form id="orderForm" class="row g-4">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control glass-input" id="name" placeholder="ФИО" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control glass-input" id="phone" placeholder="+375 (__) ___-__-__" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control glass-input" id="carBrand" placeholder="Марка и модель авто" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="date" class="form-control glass-input" id="date" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-select glass-input" id="time">
+                                        <option value="">Выберите время</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control glass-input" id="comment" rows="3" placeholder="Комментарий (необязательно)"></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-premium btn-lg px-5 py-3 fw-bold shadow-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Отправить заявку
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contact" class="bg-brown py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h4 class="fw-bold mb-3 text-cream">
+                    <i class="fas fa-car-side me-2 premium-gold"></i>AutoDetailing Minsk
+                </h4>
+                <p class="text-light">Премиум детейлинг. Работаем ежедневно 9:00-21:00</p>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="#" class="text-cream hover-scale"><i class="fab fa-telegram fs-4"></i></a>
+                    <a href="#" class="text-cream hover-scale"><i class="fab fa-instagram fs-4"></i></a>
+                    <a href="#" class="text-cream hover-scale"><i class="fab fa-viber fs-4"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h5 class="fw-bold mb-4 text-cream">Контакты</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-map-marker-alt me-2 premium-gold"></i>Минск, пр-т Машерова 11</li>
+                    <li class="mb-3"><i class="fas fa-phone me-2 premium-gold"></i>+375 (29) 123-45-67</li>
+                    <li><i class="fas fa-clock me-2 premium-gold"></i>Пн-Вс: 9:00-21:00</li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h5 class="fw-bold mb-4 text-cream">Срочная запись</h5>
+                <a href="tel:+375291234567" class="btn btn-premium w-100 py-3 fw-bold">
+                    <i class="fas fa-phone me-2"></i>Позвонить сейчас
+                </a>
+            </div>
+        </div>
+        <hr class="border-cream my-4">
+        <div class="text-center">
+            <p class="text-light mb-0">&copy; 2026 AutoDetailing Minsk. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

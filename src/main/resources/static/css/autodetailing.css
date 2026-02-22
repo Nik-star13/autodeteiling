@@ -1,0 +1,217 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+.premium-nav {
+    background: rgba(255, 242, 225, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid #a79277;
+    box-shadow: 0 8px 32px rgba(167, 146, 119, 0.2);
+    padding: 0.5rem 0;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28167, 146, 119, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.navbar-toggler {
+    border: 2px solid #a79277 !important;
+    border-radius: 8px !important;
+}
+
+.navbar-brand {
+    color: #a79277 !important;
+    font-weight: 700 !important;
+}
+
+.nav-link {
+    color: #5a4a3a !important;
+    font-weight: 500 !important;
+}
+
+.nav-link:hover {
+    color: #a79277 !important;
+}
+
+.premium-nav .navbar-collapse {
+    background: rgba(255, 242, 225, 0.99);
+    margin-top: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 2px solid #a79277;
+    box-shadow: 0 10px 30px rgba(167, 146, 119, 0.25);
+}
+
+.text-cream { color: #2d1b14 !important; }
+.premium-gold { color: #a79277 !important; }
+.text-brown { color: #5a4a3a !important; }
+
+.hero-section {
+    background: #fff2e1;
+    padding: 120px 0 80px;
+    position: relative;
+}
+
+.hero-title {
+    color: #2d1b14 !important;
+    text-shadow: none !important;
+}
+
+.hero-car img {
+    width: 100% !important;
+    height: 350px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    box-shadow: 0 15px 40px rgba(167, 146, 119, 0.3) !important;
+}
+
+.glass-card, .glass-card-large, .glass-card-small {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(167, 146, 119, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(167, 146, 119, 0.15);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: #a79277;
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(167, 146, 119, 0.25);
+}
+
+.glass-card-large { max-width: 1200px; }
+.glass-card-small {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+}
+
+.btn-premium {
+    background: #fff2e1 !important;
+    border: 2px solid #a79277 !important;
+    color: #2d1b14 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 8px 25px rgba(167, 146, 119, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+    background: #a79277 !important;
+    border-color: #a79277 !important;
+    color: #fff2e1 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(167, 146, 119, 0.4);
+}
+
+.btn-outline-gold {
+    background: transparent !important;
+    border: 2px solid #a79277 !important;
+    color: #a79277 !important;
+}
+
+.btn-outline-gold:hover {
+    background: #a79277 !important;
+    color: #fff2e1 !important;
+}
+
+.btn-select-service {
+    background: rgba(167, 146, 119, 0.15);
+    border: 2px solid #a79277;
+    color: #2d1b14 !important;
+    font-weight: 600;
+}
+
+.btn-select-service:hover,
+.btn-select-service.selected {
+    background: #a79277 !important;
+    color: #fff2e1 !important;
+    border-color: #a79277;
+    transform: translateY(-2px);
+}
+
+.premium-text {
+    color: #a79277 !important;
+    font-weight: 700 !important;
+}
+
+.service-icon-gold {
+    color: #a79277 !important;
+    font-size: 3rem !important;
+}
+
+.glass-input, .form-select {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(167, 146, 119, 0.3) !important;
+    color: #2d1b14 !important;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 16px;
+}
+
+.glass-input::placeholder {
+    color: #5a4a3a !important;
+    opacity: 1 !important;
+}
+
+.glass-input:focus, .form-select:focus {
+    background: rgb(255, 255, 255) !important;
+    border-color: #a79277 !important;
+    box-shadow: 0 0 0 0.25rem rgba(167, 146, 119, 0.2) !important;
+}
+
+.form-select option {
+    background: #fff2e1 !important;
+    color: #2d1b14 !important;
+}
+
+.bg-cream-light {
+    background: #fff2e1;
+    padding: 80px 0;
+}
+
+.bg-cream-gradient {
+    background: linear-gradient(135deg, #fff2e1 0%, #fdf8f0 100%);
+    padding: 80px 0;
+}
+
+.bg-brown {
+    background: #a79277;
+    padding: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem !important;
+        color: #2d1b14 !important;
+    }
+
+    .hero-car img {
+        height: 250px !important;
+    }
+
+    .glass-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 242, 225, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a79277;
+}
+.service-icon-gold {
+    color: #a79277 !important;
+    font-size: 3rem !important;
+    text-shadow: 0 2px 10px rgba(167, 146, 119, 0.3);
+}

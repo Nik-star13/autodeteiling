@@ -1,0 +1,43 @@
+# Maven/Gradle
+target/
+.mvn/wrapper/maven-wrapper.jar
+**/mvnw
+**/mvnw.cmd
+**/gradlew
+**/gradlew.bat
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Spring Boot
+**/application-local.properties
+**/application-dev.properties
+*.h2.db
+
+# Compiled
+*.class
+build/
+out/
+
+# Локальные утилиты
+checkService.js
+checkstyle.xml
+pmd.xml
+
+# IDE config
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
