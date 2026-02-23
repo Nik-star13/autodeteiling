@@ -7,22 +7,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalPriceEl = document.getElementById('totalPrice');
     const orderForm = document.getElementById('orderForm');
 
-    serviceButtons.forEach(button => {
-        button.addEventListener('click', function() {
+
+    serviceButtons.forEach((button, index) => {
+
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
             const serviceItem = this.closest('.service-item');
-            const serviceName = serviceItem.querySelector('h4').textContent;
-            const servicePrice = parseInt(serviceItem.dataset.price);
+            if (!serviceItem) {
+                return;
+            }
+
+            const serviceName = serviceItem.querySelector('h4').textContent.trim();
+            const servicePrice = parseInt(serviceItem.dataset.price) || 0;
             const serviceKey = serviceItem.dataset.service;
+
+            if (!serviceKey) {
+                return;
+            }
 
             const isSelected = selectedServices.some(s => s.key === serviceKey);
 
             if (isSelected) {
                 selectedServices = selectedServices.filter(s => s.key !== serviceKey);
-                this.classList.remove('selected');
+                this.classList.remove('btn-success', 'btn-outline-gold');
+                this.classList.add('btn-outline-gold');
                 this.innerHTML = '<i class="fas fa-plus me-2"></i>Выбрать';
             } else {
-                selectedServices.push({ key: serviceKey, name: serviceName, price: servicePrice });
-                this.classList.add('selected');
+                selectedServices.push({
+                    key: serviceKey,
+                    name: serviceName,
+                    price: servicePrice
+                });
+                this.classList.add('btn-success');
+                this.classList.remove('btn-outline-gold');
                 this.innerHTML = '<i class="fas fa-check me-2"></i>Выбрано';
             }
 
@@ -54,16 +72,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     orderForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const carBrand = document.getElementById('carBrand').value.trim();
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+
+        if (!name || !phone || !carBrand || !date || !time) {
+            alert('Заполните все обязательные поля!');
+            return;
+        }
+
         if (selectedServices.length === 0) {
-            alert('Выберите хотя бы одну услугу');
+            alert('Выберите хотя бы одну услугу!');
             return;
         }
 
         const formData = {
-            customerName: document.getElementById('name').value,
-            phone: document.getElementById('phone').value,
-            carBrand: document.getElementById('carBrand').value,
-            services: selectedServices.map(s => s.name)
+            customerName: name,
+            phone: phone,
+            carBrand: carBrand,
+            date: date,
+            time: time,
+            services: selectedServices.map(s => s.key)
         };
 
         try {
@@ -74,16 +106,18 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (response.ok) {
-                const order = await response.json();
+                alert('✅ Заявка отправлена успешно!');
                 this.reset();
                 selectedServices = [];
                 serviceButtons.forEach(btn => {
-                    btn.classList.remove('selected');
+                    btn.classList.remove('btn-success');
+                    btn.classList.add('btn-outline-gold');
                     btn.innerHTML = '<i class="fas fa-plus me-2"></i>Выбрать';
                 });
                 updateOrderSummary();
             } else {
-                alert('Ошибка сервера');
+                const errorText = await response.text();
+                alert('Ошибка сервера: ' + response.status);
             }
         } catch (error) {
             alert('Ошибка сети');

@@ -8,5 +8,7 @@ public class CarServiceOrderCreateDto {
     private String customerName;
     private String phone;
     private String carBrand;
+    private String date;
+    private String time;
     private List<String> services;
 }

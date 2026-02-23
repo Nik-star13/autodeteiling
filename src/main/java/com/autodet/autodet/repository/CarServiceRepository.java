@@ -1,11 +1,11 @@
 package com.autodet.autodet.repository;
 
-import com.autodet.autodet.model.Customer;
+import com.autodet.autodet.model.CarService;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
-    Optional<Customer> findByPhone(String phone);
+public interface CarServiceRepository extends JpaRepository<CarService, Long> {
+    Optional<CarService> findByName(String name);
 }
