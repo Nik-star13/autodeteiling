@@ -1,9 +1,7 @@
 window.loadNewOrders = async function() {
     try {
         const response = await fetch('/api/orders?status=NEW');
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const orders = await response.json();
         displayOrders(orders);
     } catch(error) {
@@ -21,21 +19,14 @@ window.loadOrderById = async function() {
 
     try {
         const response = await fetch(`/api/orders/${id}`);
-
         if (response.status === 404) {
             alert('Заказ не найден');
             return;
         }
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         const order = await response.json();
-        if (!order || !order.id) {
-            throw new Error('Неверный формат заказа');
-        }
-
+        if (!order || !order.id) throw new Error('Неверный формат заказа');
         displayOrders([order]);
     } catch(error) {
         alert('Ошибка поиска заказа');
@@ -50,15 +41,13 @@ function displayOrders(orders) {
     }
 
     tbody.innerHTML = orders.map(order => {
-        order.orderDate = undefined;
-        order.totalAmount = undefined;
         const servicesText = Array.isArray(order.services)
             ? order.services.join(', ')
-            : order.services || '—';
-        const totalAmount = order.totalAmount || '0';
-        const orderDate = order.orderDate
-            ? new Date(order.orderDate).toLocaleString('ru-BY')
-            : '—';
+            : (order.services || '—');
+        const totalAmount = order.totalAmount || '0 BYN';
+        const orderDate = order.date
+            ? new Date(order.date).toLocaleString('ru-BY')
+            : (order.orderDate ? new Date(order.orderDate).toLocaleString('ru-BY') : '—');
 
         return `
             <tr>
@@ -67,10 +56,9 @@ function displayOrders(orders) {
                 <td>${order.phone || '—'}</td>
                 <td>${order.carBrand || '—'}</td>
                 <td>${servicesText}</td>
-                <td><strong>${totalAmount} BYN</strong></td>
+                <td><strong>${totalAmount}</strong></td>
                 <td>${orderDate}</td>
             </tr>
         `;
     }).join('');
 }
-

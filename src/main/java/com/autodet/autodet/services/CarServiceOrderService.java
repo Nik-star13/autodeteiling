@@ -88,23 +88,21 @@ public class CarServiceOrderService {
         CarServiceOrder orderWithServices = orderRepository.save(savedOrder);
         orderRepository.flush();
 
-        BigDecimal totalAmount = carServices.stream()
+        BigDecimal totalAmount = orderWithServices.getCarServices().stream()
                 .map(CarService::getPrice)
                 .filter(Objects::nonNull)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-        orderWithServices.setTotalAmount(totalAmount);
-        orderRepository.save(orderWithServices);
 
-        return mapper.toDto(orderWithServices);
+        orderWithServices.setTotalAmount(totalAmount);
+        CarServiceOrder finalOrder = orderRepository.save(orderWithServices);
+
+        return mapper.toDto(finalOrder);
     }
+
 
     public List<CarServiceOrderDto> getAllOrders() {
         List<CarServiceOrder> orders = orderRepository.findAll();
         return orders.stream().map(mapper::toDto).toList();
-    }
-
-    public Optional<CarServiceOrderDto> getOrderById(Long id) {
-        return orderRepository.findById(id).map(mapper::toDto);
     }
 
     public List<CarServiceOrderDto> getOrdersByStatus(OrderStatus status) {

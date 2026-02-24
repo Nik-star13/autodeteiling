@@ -13,13 +13,10 @@ import java.util.Optional;
 @Repository
 public interface CarServiceOrderRepository extends JpaRepository<CarServiceOrder, Long> {
 
+    List<CarServiceOrder> findByStatus(OrderStatus status);
 
     @Query("SELECT o FROM CarServiceOrder o LEFT JOIN FETCH o.carServices cs WHERE o.id = :id")
     Optional<CarServiceOrder> findByIdWithServices(@Param("id") Long id);
-
-    List<CarServiceOrder> findByStatus(OrderStatus status);
-
-    @Query("SELECT o FROM CarServiceOrder o LEFT JOIN o.customer c WHERE c.id = :customerId")
-    List<CarServiceOrder> findByCustomerId(@Param("customerId") Long customerId);
-
 }
+
+

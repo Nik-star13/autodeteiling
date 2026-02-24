@@ -50,9 +50,4 @@ public class CarServiceOrderMapper {
 
         return dto;
     }
-
-
-    public CarServiceOrder toEntity(com.autodet.autodet.dto.CarServiceOrderCreateDto dto) {
-        throw new UnsupportedOperationException("Используйте сервис для создания");
-    }
 }

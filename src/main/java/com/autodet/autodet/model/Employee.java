@@ -1,4 +1,3 @@
-// Employee.java
 package com.autodet.autodet.model;
 
 import jakarta.persistence.*;
