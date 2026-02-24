@@ -53,7 +53,7 @@ POST /api/orders
 
 ## 🛠 Технологический стек
 
-Spring Boot 3.x + JPA + Hibernate, Maven + Checkstyle (Google Style), H2/PostgreSQL, Lombok, REST API, Bootstrap 5, ManyToMany: Order ↔ Services, @Transactional + JOIN FETCH
+Spring Boot 3.x + JPA + Hibernate, Maven + Checkstyle (Sun Style), PostgreSQL, Lombok, REST API, Bootstrap 5
 
 ## 🏗 Архитектура
 
@@ -61,27 +61,14 @@ Controller → Service → Repository → DTO + Mapper
 CarServiceOrder (ManyToMany CarService)  
 Customer (OneToMany Orders)
 
-## 📁 Структура проекта
-
-```
-src/main/java/com/autodet/autodet/
-├── controllers/     CarServiceOrderController
-├── services/        CarServiceOrderService  
-├── repository/      CarServiceOrderRepository
-├── mapper/          CarServiceOrderMapper
-├── dto/             CarServiceOrderDto.java
-└── model/           CarServiceOrder.java
-```
-
 ## 🖥 Админ-панель
 
 Таблица заказов (услуги, сумма, дата), поиск по ID, фильтр новых заявок
 
 ## 🔍 Качество кода
 
-✅ Checkstyle (Google Style)  
-✅ SonarCloud анализ  
-✅ Оптимизированные JOIN FETCH запросы  
+✅ Checkstyle (Sun Style)  
+✅ SonarCloud анализ    
 ✅ Нет dead code  
 
 ***
