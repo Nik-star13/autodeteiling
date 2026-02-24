@@ -1,0 +1,89 @@
+# 🚗 AutoDet Service - Автосервис REST API
+
+  
+
+Полнофункциональное Spring Boot приложение для управления заказами автосервиса с REST API, админ-панелью и JPA.
+
+## ✨ Основной функционал
+
+| Метод | Эндпоинт                 | Описание                 |
+|-------|--------------------------|--------------------------|
+| `POST`| `/api/orders`            | Создать заказ с услугами |
+| `GET` | `/api/orders`            | Все заказы               |
+| `GET` | `/api/orders?status=NEW` | Новые заявки             |
+| `GET` | `/api/orders/{id}`       | Детали заказа            |
+
+**Админ-панель:** http://localhost:8080/admin.html
+
+## 🚀 Быстрый запуск
+
+```bash
+git clone https://github.com/YOUR_USERNAME/autodet-service.git
+cd autodet-service
+mvn clean install
+mvn spring-boot:run
+```
+
+**API:** http://localhost:8080  
+**Админка:** http://localhost:8080/admin.html
+
+## 📋 Пример создания заказа
+
+```json
+POST /api/orders
+{
+  "customerName": "Иван Иванов",
+  "phone": "+375291234567",
+  "carBrand": "Mercedes",
+  "date": "2026-02-25",
+  "time": "14:00",
+  "services": ["wash", "wheels", "interior"]
+}
+```
+
+**Ответ:**
+```json
+{
+  "id": 1,
+  "totalAmount": 600.00,
+  "services": ["wash", "wheels", "interior"],
+  "status": "NEW"
+}
+```
+
+## 🛠 Технологический стек
+
+Spring Boot 3.x + JPA + Hibernate, Maven + Checkstyle (Google Style), H2/PostgreSQL, Lombok, REST API, Bootstrap 5, ManyToMany: Order ↔ Services, @Transactional + JOIN FETCH
+
+## 🏗 Архитектура
+
+Controller → Service → Repository → DTO + Mapper  
+CarServiceOrder (ManyToMany CarService)  
+Customer (OneToMany Orders)
+
+## 📁 Структура проекта
+
+```
+src/main/java/com/autodet/autodet/
+├── controllers/     CarServiceOrderController
+├── services/        CarServiceOrderService  
+├── repository/      CarServiceOrderRepository
+├── mapper/          CarServiceOrderMapper
+├── dto/             CarServiceOrderDto.java
+└── model/           CarServiceOrder.java
+```
+
+## 🖥 Админ-панель
+
+Таблица заказов (услуги, сумма, дата), поиск по ID, фильтр новых заявок
+
+## 🔍 Качество кода
+
+✅ Checkstyle (Google Style)  
+✅ SonarCloud анализ  
+✅ Оптимизированные JOIN FETCH запросы  
+✅ Нет dead code  
+
+***
+
+**🛠 Лабораторная работа 1**
